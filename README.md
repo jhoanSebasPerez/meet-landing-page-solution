@@ -19,7 +19,6 @@ This is a solution to the [Meet landing page challenge on Frontend Mentor](https
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -46,8 +45,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub repository](https://github.com/jhoanSebasPerez/meet-landing-page-solution)
+- Live Site URL: [Site deployed in GitHub Pages](https://jhoansebasperez.github.io/meet-landing-page-solution/)
 
 ## My process
 
@@ -58,61 +57,58 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Dynamic image loading depending on the viewport, this was used in the Hero part, where I made use of <picture> as a wrapper tag, and inside this the unary tag <source> with its responsive attribute "media" where it allows to set a condition for the respective image loading, the attribute "srcset" contains the path of the resource location. The <img> tag contains the image that will be loaded by default if the above conditions are not met.
+  ```html
+  <picture>
+  <source
+          srcset="./assets/desktop/image-hero-left.png"
+          media="(min-width: 1024px)"
+      />
+  <img src="./assets/tablet/image-hero.png" alt="left" />
+  </picture>
 
-To see how you can add code snippets, see below:
+````
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+- Use of the Grid Layout for the distribution of the internal components of the Hero, providing greater convenience when relocating the elements based on the Viewport of each device.
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+    .hero {
+        overflow-x: hidden;
+        display: grid;
+        grid-template-areas:
+            "left"
+            "content";
+    }
+````
+
+when the viewport is 1024px or higher
+
+```css
+.hero {
+  grid-template-areas: "left content right";
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+In each Hero component they are placed using the "grid-area" property.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I would like in future projects to implement pre-processors such as Sass, also to make use of animations to improve usability.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - This resource helped me to remember certain properties for CSS Grid management, it is very useful because it provides visual content.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [A Complete Guide to Flexbox
+  ](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Useful for remembering CSS Flex handling properties and their visual representation
+
+- [<picture>: The Picture element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) - Use and usefulness of the <picture> tag for semantics and management to dynamically load resources (responsive).
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- linkedin - [Jhoan Sebastián Pérez Acosta](https://www.your-site.com)
+- Frontend Mentor - [@jhoanSebasPerez](https://www.frontendmentor.io/profile/jhoanSebasPerez)
+- Twitter - [@JhoanPerezA0](https://twitter.com/JhoanPerezA0)
