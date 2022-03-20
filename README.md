@@ -63,18 +63,19 @@ Users should be able to:
 - Dynamic image loading depending on the viewport, this was used in the Hero part, where I made use of <picture> as a wrapper tag, and inside this the unary tag <source> with its responsive attribute "media" where it allows to set a condition for the respective image loading, the attribute "srcset" contains the path of the resource location. The <img> tag contains the image that will be loaded by default if the above conditions are not met.
   ```html
   <picture>
-  <source
-          srcset="./assets/desktop/image-hero-left.png"
-          media="(min-width: 1024px)"
-      />
-  <img src="./assets/tablet/image-hero.png" alt="left" />
+    <source
+      srcset="./assets/desktop/image-hero-left.png"
+      media="(min-width: 1024px)"
+    />
+    <img src="./assets/tablet/image-hero.png" alt="left" />
   </picture>
+  ```
 
 ````
 
 - Use of the Grid Layout for the distribution of the internal components of the Hero, providing greater convenience when relocating the elements based on the Viewport of each device.
 
-```css
+  ```css
     .hero {
         overflow-x: hidden;
         display: grid;
