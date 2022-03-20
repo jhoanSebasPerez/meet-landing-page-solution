@@ -61,6 +61,7 @@ Users should be able to:
 ### What I learned
 
 - Dynamic image loading depending on the viewport, this was used in the Hero part, where I made use of <picture> as a wrapper tag, and inside this the unary tag <source> with its responsive attribute "media" where it allows to set a condition for the respective image loading, the attribute "srcset" contains the path of the resource location. The <img> tag contains the image that will be loaded by default if the above conditions are not met.
+
   ```html
   <picture>
     <source
@@ -71,19 +72,17 @@ Users should be able to:
   </picture>
   ```
 
-````
-
 - Use of the Grid Layout for the distribution of the internal components of the Hero, providing greater convenience when relocating the elements based on the Viewport of each device.
 
   ```css
-    .hero {
-        overflow-x: hidden;
-        display: grid;
-        grid-template-areas:
-            "left"
-            "content";
-    }
-````
+  .hero {
+    overflow-x: hidden;
+    display: grid;
+    grid-template-areas:
+      "left"
+      "content";
+  }
+  ```
 
 when the viewport is 1024px or higher
 
